@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Strategy Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #66ccff;
+        }
+        main {
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            margin: 0 0 10px;
+            color: #66ccff;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        p {
+            font-size: 16px;
+        }
+        footer {
+            background-color: #1e1e1e;
+            padding: 10px;
+            text-align: center;
+            border-top: 2px solid #333333;
+            font-size: 14px;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Race Strategy Dashboard</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card">
+                <h2>Live Telemetry</h2>
+                <img src="data:image/png;base64,{{ live_plot }}" alt="Live Telemetry Plot">
+            </div>
+            <div class="card">
+                <h2>Strategy Insights</h2>
+                <p>Average Speed: <strong>{{ insights.average_speed }}</strong> km/h</p>
+                <p>Projected Lap Time: <strong>{{ insights.projected_lap_time }}</strong> s</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;Race Strategy Team</p>
+    </footer>
+</body>
+</html>
